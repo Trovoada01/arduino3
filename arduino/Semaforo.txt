@@ -1,0 +1,52 @@
+byte ledVermelho = 2;
+byte ledAmarelo = 4;
+byte ledVerde = 6;
+byte ledAzul = 9; 
+byte ledVermelhao = 10;
+
+int botao = 7;
+int estado = 0;
+
+void setup(){
+
+pinMode(ledAmarelo, OUTPUT); pinMode(ledAzul, OUTPUT);
+pinMode(ledVerde, OUTPUT);
+pinMode(ledVermelho, OUTPUT); pinMode(ledVermelhao, OUTPUT);
+pinMode(botao, INPUT);
+}
+
+void loop() {
+digitalWrite(ledAzul,0); 
+estado = digitalRead(botao);
+ if (estado == 0) {
+
+digitalWrite(ledVermelhao, 1);
+
+digitalWrite(ledVermelho, 1);
+delay(1000); 
+digitalWrite(ledVermelho, 0);
+delay(1000);
+
+digitalWrite(ledAmarelo, 1);
+delay(1000);
+digitalWrite(ledAmarelo, 0);
+delay(1000);
+
+digitalWrite(ledVerde, 1);
+delay(1000);
+digitalWrite(ledVerde, 0);
+delay(1000);
+
+
+
+} else{
+
+digitalWrite(ledVerde, 0);
+digitalWrite(ledAmarelo, 0);
+digitalWrite(ledVermelhao, 0);
+digitalWrite(ledVermelho, 1);
+digitalWrite(ledAzul, 1);
+delay(2000);
+
+}
+}
